@@ -35,7 +35,12 @@
     }
 
     @include mobile {
-        max-width: 165px;
+      min-width: 165px;
+      margin-left: auto;
+    }
+
+    @include mobile-s {
+      min-width: 130px;
     }
   }
 
@@ -65,9 +70,9 @@
     }
 
     &-label {
-        @include mobile {
-            @include visually-hidden;
-        }
+      @include mobile {
+        @include visually-hidden;
+      }
     }
 
     &--light {
