@@ -1,4 +1,11 @@
 .field {
+  --fieldInputHeight: var(--input-height);
+  --fieldInputBgColor: var(--color-light);
+  --fieldInputTextColor: var(--color-dark);
+  --fieldInputBorderColor: var(--color-dark);
+  --fieldInputPlaceholderColor: var(--color-gray-alt);
+  --fieldInputBgHoverColor: var(--color-accent);
+
   display: flex;
   flex-direction: column;
   row-gap: 5px;
@@ -14,18 +21,21 @@
 
   &__input {
     width: 100%;
-    height: var(--input-height);
+    height: var(--fieldInputHeight);
     padding-inline: 30px;
     border: var(--border);
+    border-color: var(--fieldInputBorderColor);
     border-radius: var(--border-radius);
     transition-duration: var(--transition-duration);
+    background-color: var(--fieldInputBgColor);
+    color: var(--fieldInputTextColor);
 
     @include mobile {
       padding-inline: 20px;
     }
 
     @include hover {
-      background-color: var(--color-accent);
+      background-color: var(--fieldInputBgHoverColor);
     }
 
     &:focus {
@@ -46,5 +56,17 @@
         height: 132px;
       }
     }
+  }
+
+  &--big-height {
+    --fieldInputHeight: var(--button-height);
+  }
+
+  &--dark-bg {
+    --fieldInputBgColor: var(--color-dark-alt);
+    --fieldInputTextColor: var(--color-accent);
+    --fieldInputBorderColor: var(--color-light);
+    --fieldInputPlaceholderColor: var(--color-light);
+    --fieldInputBgHoverColor: var(--color-dark);
   }
 }
